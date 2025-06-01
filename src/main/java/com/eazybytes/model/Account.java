@@ -27,8 +27,8 @@ public class Account {
     @Column(name = "create_dt")
     private LocalDate createDt;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @OneToMany(mappedBy = "account")

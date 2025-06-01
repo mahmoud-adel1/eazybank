@@ -18,7 +18,7 @@ public class LoanController {
 
     private final LoanService loanService;
 
-    @GetMapping("/loans")
+    @GetMapping("/myLoans")
     public ResponseEntity<List<LoanResponseDto>> getLoanDetails(Authentication authentication) {
         List<LoanResponseDto> loanResponseDtoList = loanService.getLoanDetails(authentication.getName());
         if (loanResponseDtoList.isEmpty()) {

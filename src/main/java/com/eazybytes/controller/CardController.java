@@ -18,7 +18,7 @@ public class CardController {
 
     private final CardService cardService;
 
-    @GetMapping("/cards")
+    @GetMapping("/myCards")
     public ResponseEntity<List<CardResponseDto>> getCardDetails(Authentication authentication) {
 
         List<CardResponseDto> cardResponseDtoList = cardService.getCardDetails(authentication.getName());

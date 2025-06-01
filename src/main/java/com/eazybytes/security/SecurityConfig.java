@@ -33,11 +33,11 @@ public class SecurityConfig {
         http.securityContext(securityContextConfig->securityContextConfig.requireExplicitSave(false));
 
         http.authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/accounts").hasRole("USER")
+                .requestMatchers("/account/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers("/myBalance").hasRole("USER")
                 .requestMatchers("/myCards").hasRole("USER")
                 .requestMatchers("/myLoans").hasRole("USER")
-                .requestMatchers("/user").authenticated()
+                .requestMatchers("/my-customer").hasRole("USER")
                 .requestMatchers("/contact","/notices","/error","/register", "/login").permitAll()
                 .requestMatchers("/v2/**","/v3/**","swagger-resources/**","/configuration/**","/swagger-ui/**","/webjars/**","/swagger-ui.html").permitAll());
 

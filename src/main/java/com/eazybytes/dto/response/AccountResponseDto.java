@@ -9,8 +9,6 @@ public class AccountResponseDto {
 
     private Long customerId;
 
-    private String customerName;
-
     private Long accountNumber;
 
     private String accountType;

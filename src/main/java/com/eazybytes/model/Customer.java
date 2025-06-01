@@ -32,7 +32,7 @@ public class Customer {
     @Column(name = "create_dt")
     private LocalDate createDt;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Account> accounts;
 
     @OneToMany(mappedBy = "customer")

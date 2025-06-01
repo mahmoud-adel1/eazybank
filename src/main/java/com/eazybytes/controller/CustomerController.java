@@ -18,7 +18,7 @@ public class CustomerController {
     private final CustomerService customerService;
 
 
-    @GetMapping("/customer")
+    @GetMapping("/my-customer")
     public ResponseEntity<CustomerResponseDto> getCustomerDetails(Authentication authentication) {
         CustomerResponseDto customerResponseDto = customerService.getCustomerDetails(authentication.getName());
         return ResponseEntity.status(HttpStatus.OK)

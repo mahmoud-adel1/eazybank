@@ -18,7 +18,7 @@ public class AccountTransactionController {
 
     private final AccountTransactionService accountTransactionService;
 
-    @GetMapping("/account-transactions")
+    @GetMapping("/myAccountTransactions")
     public ResponseEntity<List<AccountTransactionResponseDto>> getBalanceDetails(Authentication authentication) {
         List<AccountTransactionResponseDto> accountTransactionResponseDtoList =
                 accountTransactionService.getAccountTransactionDetails(authentication);

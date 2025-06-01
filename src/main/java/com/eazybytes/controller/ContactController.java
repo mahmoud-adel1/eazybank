@@ -16,7 +16,7 @@ public class ContactController {
 
     private final ContactService contactService;
 
-    @PostMapping("/contact")
+    @PostMapping("/myContact")
     public ResponseEntity<ContactResponseDto> savedContactInquiryDetails(@Valid @RequestBody ContactRequestDto contactRequestDto) {
         return contactService.savedContactInquiryDetails(contactRequestDto);
     }
